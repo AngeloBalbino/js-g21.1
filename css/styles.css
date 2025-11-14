@@ -1,0 +1,631 @@
+/*GLOBAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    max-width: 100%;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 80px;
+  background-color: #fff;
+  border-bottom: 0.1rem solid rgb(166, 15, 15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 10;
+  overflow-x: clip;
+  box-sizing: border-box;
+}
+.header section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 15px;
+}
+.header section img {
+    height: 33px;
+}
+.header section a {
+    text-decoration: none;
+}
+.hoverA.ativo{
+  color: rgb(166, 15, 15);
+  font-family: "Yuji Syuku", serif;
+  font-style: normal;
+}
+.header section h4 {
+    color: black;
+    font-weight: bold;
+}
+.text-logo {
+    color: rgb(166, 15, 15);
+    font-size: 16px;
+    font-family: "Yuji Syuku", serif;
+    font-style: normal;
+}
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem; 
+    height: 100%;
+    margin-right: 20px;
+}
+.header nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+#tamn-cart{
+  height: 27px;
+}
+.cart-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -9px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  display: none;
+}
+
+
+
+/* VIDEO E MÁSCARA */
+.caixa-video {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    overflow: hidden;
+}
+.caixa-video video,.mascara {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      109deg,
+      rgba(10, 12, 16, 0.99) 15%,
+      rgba(10, 12, 16, 0.7) 50%,
+      rgba(10, 12, 16, 0.99) 85%
+    );
+}
+.caixa-video video {
+    object-fit: cover;
+}
+
+
+
+/* INTRODUÇÃO */
+.introducao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+.introducao h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+    color: rgba(166, 15, 15, 0.51);
+    font-family: "Yuji Syuku", serif;
+    font-style: normal;
+}
+.introducao .gradiente {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(166, 15, 15) 0%, rgba(255, 255, 255, 0.8) 100%);
+  margin: 0.5rem auto 1rem auto;
+  border-radius: 2px;
+}
+.introducao p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: "Yuji Syuku", serif;
+    font-style: normal;
+}
+.introducao a {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.introducao .ativo{
+    background-color: rgba(8, 4, 4, 0.2);
+    color: rgb(166, 15, 15);
+        font-family: "Yuji Syuku", serif;
+    font-style: normal;
+    border: 1px solid rgb(166, 15, 15);
+}
+.statusloja{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  color: #fafafa;
+  background: radial-gradient(circle,rgba(163, 38, 38, 1) 0%, rgba(46, 0, 0, 1) 100%);  width: 100%;
+
+}
+main{
+    z-index: 2;
+}
+
+
+
+/* ÁREA DO CARROSSEL */
+.container-carrossel {
+background: #a32626;
+background: radial-gradient(circle,rgba(163, 38, 38, 1) 0%, rgba(46, 0, 0, 1) 100%);  width: 100%;
+  padding: 80px 0; 
+  text-align: center;
+}
+
+.container-carrossel h3 {
+      font-family: "Yuji Syuku", serif;
+    font-style: normal;
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.subtexto-carrossel {
+  font-size: 1rem;
+  color: #000000;
+  margin-bottom: 40px;
+}
+#slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 15px;
+}
+#dvSlider {
+  display: flex;
+  width: 1000px;
+  height: 450px;
+  overflow: hidden;
+  gap: 25px;
+  padding: 10px;
+  transition: transform 0.6s ease;
+  justify-content: center;
+}
+.produto {
+  border: 1px solid #ddd;
+  flex: 1 0 32%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.produto img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+.produto .info-produto {
+  flex: 1;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.produto h3 {
+  
+  font-size: 18px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.produto p {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.produto .info-comprar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.produto .preco {
+  font-weight: bold;
+  color: #000;
+}
+.btn-comprar {
+  background: rgb(166, 15, 15);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.btn {
+  background: rgba(255, 255, 255, 0.425);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  border-radius: 50%;
+}
+#dvSlider, .menu-grid {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* SOBRE NÓS */
+.Container-SobreNos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 10%;
+  background-color: #fafafa;
+}
+.caixa-foto {
+  flex: 1;
+}
+.caixa-foto img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
+.caixa-text {
+  flex: 1;
+  color: #222;
+  line-height: 1.6;
+}
+.caixa-text h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+        font-family: "Yuji Syuku", serif;
+    font-style: normal;
+}
+.caixa-text .gradiente {
+  width: 70px;
+  height: 5px;
+  border-radius: 3px;
+  margin-bottom: 1.2rem;
+}
+.gradiente2{
+   width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(166, 15, 15) 0%, rgba(204, 31, 31, 0.8) 100%);
+  border-radius: 2px;
+}
+.caixa-text p {
+  font-size: 1rem;
+  color: #444;
+  text-align: justify;
+}
+
+/* MENU */
+#menu {
+  background-color: #fff;
+  padding: 80px 10%;
+  text-align: center;
+}
+#menu h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+        font-family: "Yuji Syuku", serif;
+    font-style: normal;
+}
+
+#menu .gradiente {
+  margin: 0 auto 2rem auto;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  padding: 30px;
+}
+.card {
+  width: 280px;
+  height: 380px;
+  perspective: 1000px;
+  margin: 15px;
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+.card-front {
+  background: #efe7e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(166, 15, 15);
+}
+.card-front img {
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  display: block;
+}
+.card-front h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+  padding: 0 10px;
+  color: #000000;
+  font-weight: 600;
+}
+.card-back {
+  background: #fff;
+  transform: rotateY(180deg);
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card-back p {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+.card-back button {
+  background: rgb(166, 15, 15);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.card-back button:hover{
+  background: rgb(130, 10, 10);
+}
+.card:hover{
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+
+
+/* FOOTER */
+footer{
+  background: radial-gradient(circle, rgb(52, 3, 3) 0%, rgb(108, 2, 2) 100%);  width: 100%;
+
+}
+#email {
+  color: #ddd;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: row;
+  width: 100vw;
+  text-align: center;
+  padding: 60px 20px;
+  row-gap: 18px;
+}
+
+#logo-email {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #990a0a;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#logo-email img {
+  width: 28px;
+  height: 28px;
+}
+#email p {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #adacac;
+}
+#email p:first-of-type {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+}
+#input-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+#input-email input {
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  width: 280px;
+  font-size: 0.95rem;
+}
+
+#input-email button {
+  padding: 10px 18px;
+  border-radius: 25px;
+  background-color: #990a0a;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+#btnInscrever{
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;}
+#btnInscrever.ativo{
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.1);
+}
+.container-cards-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  color: #ddd;
+  padding: 80px 5vw;
+  text-align: center;
+
+}
+.card-info {
+  background-color: #111;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  padding: 60px 20px 30px;
+  width: 100%;
+  max-width: 350px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+.card-info button {
+  background-color: #990a0a;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  margin-top: -40px;
+  transition: transform 0.3s ease;
+}
+
+.card-info button:hover {
+  transform: scale(1.1);
+}
+.card-info button img {
+  width: 35px;
+  height: 35px;
+}
+.card-info h4 {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.card-info p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #bbb;
+}
+.footer-brand {
+  color: #ddd;
+  text-align: center;
+  padding: 60px 20px 40px;
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+}
+
+.footer-line {
+  width: 80%;
+  border: none;
+  border-top: 1px solid #bababa;
+  margin-bottom: 30px;
+}
+.brand-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.brand-content img {
+  width: 35px;
+  height: 35px;
+}
+.brand-text h4 {
+  color: #000000;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1;
+}
+.brand-text h5 {
+  color: rgb(166, 15, 15);
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 5px 0 0;
+  letter-spacing: 1px;
+        font-family: "Yuji Syuku", serif;
+    font-style: normal;
+}
+.credit {
+  color: #fff6f6;
+  font-size: 0.85rem;
+  margin-top: 25px;
+}

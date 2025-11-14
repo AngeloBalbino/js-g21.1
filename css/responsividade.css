@@ -1,0 +1,89 @@
+@media (max-width: 768px) {
+  .container-cards-info {
+    padding: 60px 2rem;
+  }
+
+  .card-info {
+    max-width: 100%;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .brand-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .brand-content img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    width: 230px;
+    height: 340px;
+  }
+
+  .card-front img {
+    height: 60%;
+  }
+
+  .card-front h4 {
+    font-size: 16px;
+  }
+
+  .card-back p {
+    font-size: 13px;
+  }
+
+  .card-back button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Container-SobreNos {
+    flex-direction: column; 
+    padding: 40px 5%;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .caixa-text {
+    order: 1;
+  }
+
+  .caixa-foto {
+    order: 2;
+  }
+
+  .caixa-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .caixa-text p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .caixa-foto img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+    .gradiente2 {
+    margin: 0.8rem auto 1.2rem auto;
+  }
+}
+
+

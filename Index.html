@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/responsividade.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+    <title>Softería</title>
+</head>
+
+
+<body onload="iniciaslider()">
+    <header class="header">
+        <section>
+            <a href="#">
+                <img src="/resoursces/icons/coffee.png" alt="Logo da página">
+            </a>
+            <div>
+                <a href="">
+                    <h4>软化</h4>
+                </a>
+                <a href="">
+                    <h5 class="text-logo">softería</h5>
+                </a>
+            </div>
+        </section>
+
+        <nav>
+            <a class="hoverA" href="#scroll-header">Sobre</a>
+            <a class="hoverA" href="#menu">Menu</a>
+            <a class="hoverA" href="#email">Contato</a>
+            <div class="cart-container">
+                <a href="https://www.ifood.com.br/" target="_blank"><img src="/resoursces/icons/shopping-cart.png"
+                        alt="" id="tamn-cart"></a>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="caixa-video">
+        <video src="/resoursces/videos/video main.webm" autoplay loop muted></video>
+        <div class="mascara"></div>
+
+        <section class="introducao">
+            <h3>软化</h3>
+            <h3>softería</h3>
+            <div class="gradiente"></div>
+            <p>Uma Viagem Quente Entre o Ártico e o Oriente</p>
+            <a href="#menu" id="hoverExplo">EXPLORAR MENU</a>
+        </section>
+    </section>
+
+    <section class="statusloja">
+        <div class="gradiente"></div>
+        <h5>VISITE-NOS DE TERÇA A DOMINGO, DAS 10:00 AS 21:00</h5>
+    </section>
+
+
+    <main>
+        <section class="container-carrossel">
+            <h3>BEBIDAS EM DESTAQUE</h3>
+            <p class="subtexto-carrossel">Nossas bebidas mais queridas, preparadas com o melhor de cada cultura.</p>
+
+            <div id="slider-container" onmouseover="parar()" onmouseout="iniciaslider()">
+                <button class="btn" onclick="troca(-1)">
+                    <img src="/resoursces/icons/arrow-left.png" alt="">
+                </button>
+                <div id="dvSlider"></div>
+                <button class="btn" onclick="troca(1)">
+                    <img src="/resoursces/icons/arrow-right.png" alt="">
+                </button>
+            </div>
+        </section>
+
+        <section id="scroll-header">
+            <div class="Container-SobreNos">
+                <div class="caixa-foto">
+                    <img src="/resoursces/img/sobreNós.jpeg" alt="imagem da loja">
+                </div>
+
+                <div class="caixa-text">
+                    <h3>Nossa História</h3>
+                    <div class="gradiente2"></div>
+                    <p>Entre o frio das montanhas islandesas e a serenidade das manhãs chinesas, nasceu um refúgio para
+                        os sentidos — uma cafeteria onde o aroma do café se mistura com a melodia suave de Laufey.
+                        Softería é mais do que um café: é uma pausa no tempo. Cada xícara é preparada com a
+                        calma nórdica e o cuidado oriental, celebrando o encontro entre duas culturas que valorizam o
+                        silêncio, a arte e a beleza das pequenas coisas.
+                    </p>
+                    <p>Aqui, o piano vira aroma, o jazz vira espuma, e
+                        cada gole conta uma história — de amor, de saudade e de reencontro.Sente-se, respire fundo, e
+                        deixe que a música do coração aqueça suas mãos. Bem-vindo ao lugar onde o café é poesia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h3>Nosso Menu</h3>
+            <div class="gradiente"></div>
+            <div class="menu-grid" id="menu-grid"></div>
+        </section>
+    </main>
+
+
+    <footer>
+        <section id="email">
+            <button id="logo-email"><img src="/resoursces/icons/mail.png" alt=""></button>
+            <p>Ofertas Exclusivas softería</p>
+            <P>Inscreva-se na nossa newsletter e ganhe 10% de desconto na primeira visita, além de novidades sobre
+                nossas criações fusion e eventos especiais
+            </P>
+            <div id="input-email">
+                <input id="emaill" type="email" placeholder="Digite seu email de contato" required>
+                <button id="btnInscrever" type="button">Inscreva-se</button>
+            </div>
+            <P>Respeitamos sua privacidade. Sem spam, apenas o melhor da fusão Oriente-Norte!</P>
+        </section>
+        <div class="gradiente"></div>
+
+        <section class="container-cards-info">
+            <div class="card-info">
+                <button><img src="/resoursces/icons/mail.png" alt="Ícone de email"></button>
+                <h4>Contato</h4>
+                <p>Envie um email para <br> contato@softeria.com</p>
+            </div>
+
+            <div class="card-info">
+                <button><img src="/resoursces/icons/phone.png" alt="Ícone de telefone"></button>
+                <h4>Telefone</h4>
+                <p>(22) 98142-0761<br>Atendimento: 10h às 21h</p>
+            </div>
+
+            <div class="card-info">
+                <button><img src="/resoursces/icons/map.png" alt="Ícone de localização"></button>
+                <h4>Localização</h4>
+                <p>Vilatur, 33<br>Saquarema - RJ</p>
+            </div>
+        </section>
+
+
+        <div class="footer-brand">
+            <hr class="footer-line">
+            <div class="brand-content">
+                <img src="/resoursces/icons/coffee.png" alt="Logo da Softería">
+                <div class="brand-text">
+                    <h4>软化</h4>
+                    <h5>softería</h5>
+                </div>
+            </div>
+            <p class="credit">© 2025 softería — Todos os direitos reservados</p>
+        </div>
+    </footer>
+<script src="scripts.js"></script>
+</body>
+</html>
